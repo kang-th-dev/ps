@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdio>
 using namespace std;
+//queue implement
 class queue{
     private:
         int v;
@@ -38,6 +39,7 @@ queue::~queue(){
     delete[] q;
 }
 
+//graph implement
 class graph
 {
 private:
@@ -116,7 +118,10 @@ int main(){
     
     //Expressing that two vertices are connected
     int v1,v2;
+
+    //connect graph edge
     for(int i=0; i<e; i++){
+        //Since it is a non-directional graph, it is symmetric.
         cin >>v1 >>v2;
         g.push(v1,v2);
         g.push(v2,v1);

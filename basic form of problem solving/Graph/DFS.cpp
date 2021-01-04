@@ -2,6 +2,7 @@
 #include <cstdio>
 using namespace std;
 
+//graph implement
 class graph
 {
 private:
@@ -13,10 +14,6 @@ public:
     void visited(int ee, bool isVisit){visit[ee] = isVisit;}
     bool visited(int ee) { return visit[ee]; }
     bool isConnected(int v1,int v2){ return connected[v1][v2];}
-    graph(int cv,int ce);
-    ~graph();
-    
-    //test
     void print(){
         for(int i=1; i<=v; i++){
             for(int j=1; j<=v; j++){
@@ -26,6 +23,8 @@ public:
         }
     }
     
+    graph(int cv,int ce);
+    ~graph();
 };
 
 //constructor
@@ -55,14 +54,11 @@ graph::~graph()
     delete[] connected;
     delete[] visit;
 }
-
-bool dfsVisited[1001]={false,};
-bool bfsVisited[1001]={false,};
 void dfs(graph g,int ee,int v){
-    printf("%d ",ee);
-    dfsVisited[ee]= true;
+    cout << ee <<" ";
+    g.visited(ee, true);
     for(int i=1; i<=v; i++){
-    if(g.isConnected(ee,i) && !dfsVisited[i]){
+        if(g.isConnected(ee,i) && !g.visited(i)){
             dfs(g,i, v);
         }
     }
@@ -74,12 +70,13 @@ int main(){
     //vertax&edge input
 
     int s; 
-    scanf("%d%d%d",&v,&e,&s);
+    cin >> v>>e >>s;
     graph g(v,e);
     
     //Expressing that two vertices are connected
     int v1,v2;
     for(int i=0; i<e; i++){
+        //Since it is a non-directional graph, it is symmetric.
         cin >>v1 >>v2;
         g.push(v1,v2);
         g.push(v2,v1);

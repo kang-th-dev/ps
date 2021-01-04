@@ -2,21 +2,29 @@
 #include <cstdio>
 using namespace std;
 
+/*
+    ### Common graph form ###
+    Expressed mainly in non-direction.
+
+    To express as a directed graph, change the variable 
+     "visit" in the graph class to a double array.
+*/
 class graph
 {
 private:
     int v,e;
+    //Are the two vertices connected?
     bool ** connected;
     bool * visit;
 public:
     void push(int v1,int v2){connected[v1][v2] = true; }
     void visited(int ee, bool isVisit){visit[ee] = isVisit;}
-    bool visited(int ee) { return visit[ee]; }
+    bool isVisited(int ee) { return visit[ee]; }
     bool isConnected(int v1,int v2){ return connected[v1][v2];}
     graph(int cv,int ce);
     ~graph();
     
-    //test
+    //test print
     void print(){
         for(int i=1; i<=v; i++){
             for(int j=1; j<=v; j++){
