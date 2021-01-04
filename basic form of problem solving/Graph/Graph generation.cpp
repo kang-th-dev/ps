@@ -23,7 +23,7 @@ public:
     bool isConnected(int v1,int v2){ return connected[v1][v2];}
     graph(int cv,int ce);
     ~graph();
-     
+       
     //test print
     void print(){
         for(int i=1; i<=v; i++){
@@ -31,7 +31,7 @@ public:
                 printf("%d ",connected[i][j]);
             }
             cout << endl;
-        }
+        } 
     }
     
 };

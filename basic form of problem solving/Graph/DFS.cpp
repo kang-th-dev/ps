@@ -75,6 +75,8 @@ int main(){
     
     //Expressing that two vertices are connected
     int v1,v2;
+   
+    //connect graph edge
     for(int i=0; i<e; i++){
         //Since it is a non-directional graph, it is symmetric.
         cin >>v1 >>v2;
@@ -82,4 +84,4 @@ int main(){
         g.push(v2,v1);
     }
     dfs(g,s,v);
-}
+} 
