@@ -2,13 +2,13 @@
 
 > STL 같은 편법 안쓰고 구현
 
-* [Coefficient](/Coefficient)
+* [Coefficient](Coefficient)
 --미완성
-* [Graph](/Graph)
+* [Graph](Graph)
 --제작중
-* [Number Theory](/Number%20Theory)
+* [Number Theory](Number%20Theory)
 --미완성
-* [Relation](/Relation)
+* [Relation](Relation)
 --미완성
-* [Tree](/Tree)
+* [Tree](Tree)
 --미완성
